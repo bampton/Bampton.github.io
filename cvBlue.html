@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!--
+/********************* Colour reference chart****************
+*************************** comment ********* colour ******** 
+
+background-color 1                          #e8edff
+background-color 2                          #efffff
+
+text colour 1               tc1             #2E2E2E
+text colour 2               tc2             #003399
+
+table date color            tdc             #3CB5B5
+
+pie chart color array                       #3C8DC5
+                                            #6FB7E9
+                                            #B2D1E5
+                                            #3CB5B5
+                                            #97CCEE
+                                            #46A5E5
+                                            #46A5E5
+*/
+-->
+
+<head>
+
+    
+
+    <style type="text/css" >
+        .tg  {border-collapse:collapse;border-spacing:0;margin-left:50px;}
+        .tg td{font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;font-size:12px;padding:5px 5px;border-collapse:collapse;border-style:none;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#2E2E2E;background-color:#e8edff;border-left-width:1px;border-top-width:1px;border-bottom-width:1px;border-right-width:4px;}
+        
+        .tg .tg-tablePrime{background-color:#efffff;color:#003399;vertical-align:center;text-align:justify}
+        .tg .tg-tableAux{vertical-align:center;text-align:justify}
+
+        .tg .tg-tableDate{background-color:#3CB5B5;color:#003399;vertical-align:center;text-align:center}
+        .tg .tg-tableLocation{vertical-align:center;text-align:center}
+
+        .tg .tg-iconBlackBooks{vertical-align:center}
+        .tg .tg-iconNXP{vertical-align:center;background-color:#efffff}
+        .tg .tg-iconAtos{vertical-align:center}
+        .tg .tg-iconIntel{vertical-align:center;background-color:#efffff}
+        .tg .tg-iconNokia{vertical-align:center}
+        .tg .tg-iconEMP{vertical-align:center;background-color:#efffff}
+        .tg .tg-iconTI{vertical-align:center}
+        .tg .tg-iconTeleca{vertical-align:center}
+    
+        .divHeading {
+            border: none;
+            border-radius: 25px;
+            margin-left:50px;
+            margin-right:50px;
+            background-color:#E9F2F9;
+        }
+        .tb-Heading{
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+            color: #2E2E2E;
+            text-align: justify;
+            padding:0px 50px;
+            max-width:800px;
+            border-collapse:collapse;
+            border-spacing:5;
+            margin-left:50px;
+            font-size: 18px;
+            border-radius: 15px;
+        }
+
+        .td-spacer {
+            width: 0px;
+        }
+        
+        h1 {
+            font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+            color: #262626;
+            width: 800px;
+            padding:0px 50px;
+            max-width:800px;
+            text-align: right;
+        }
+
+/*
+        h1 {
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+            color: #262626;
+            width: 800;
+            padding:0px 50px;
+            max-width:800px;
+            text-align: center;
+        }
+*/
+        h2 {
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+            color: #2E2E2E;
+            text-align: justify;
+            padding:0px 50px;
+            max-width:800px;
+        }              
+        p {
+            text-align: justify;
+            width: 80%;
+            padding:0px 50px;
+            max-width:750px;
+            margin-left:50px;
+            margin-right:50px;
+        }
+        ul {
+            text-align: justify;
+            width: 800px;
+            max-width:800px;
+        }
+
+        .contactstatus {
+            border-collapse:collapse;
+            padding:5px;
+        }
+        .contactstatus td {
+            padding:2px 15px;
+        }
+        
+        P.breakhere {
+            page-break-before: always;
+        }
+        
+    </style>
+	
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var langdata = google.visualization.arrayToDataTable([
+            ['Experience', 'Years'],
+            ['Java',   		 5],
+            ['Embedded C',   8],
+            ['Qtopia',       1],
+            ['UML', 		 2],
+            ['C++', 		 2],
+            ['Visual Basic', 1.5]
+        ]);
+        var idedata = google.visualization.arrayToDataTable([
+            ['IDE', 'Years'],
+            ['Eclipse',   		4],
+            ['Visual Studio',   4],
+            ['Source Insight',  2],
+            ['Editors', 		4],
+            ['Visual Basic', 	1]
+        ]);
+        var vcdata = google.visualization.arrayToDataTable([
+            ['Version Control', 'Years'],
+            ['ClearCase',   	6],
+            ['cvs / svn',		4],
+            ['Synergy', 	 	3],
+            ['SourceSafe',      2],
+            ['Git', 	    	1]
+        ]);
+        var toolsdata = google.visualization.arrayToDataTable([
+            ['IDE', 'Years'],
+            ['Lint',   	        	2],
+            ['PCO',                 3],
+            ['CTC',                 1],
+            ['Testify / Purify', 	2],
+            ['Core Dump',        	5],
+            ['CppUnit', 	        1],
+            ['Junit', 	            1]
+        ]);
+
+        <!-- Options - TODO  - add companys where tools were used in tooltips -->
+        var langoptions = {
+            title: 'Languages',
+            pieSliceText: 'label',
+//            tooltip: {isHtml: true}, 
+            chartArea:{left:90,top:30,width:'50%',height:'75%'},  //            backgroundColor: "#E8EDFF"
+            slices: {
+            0: { color: '#3C8DC5' },
+            1: { color: '#6FB7E9' },
+            2: { color: '#B2D1E5' },
+            3: { color: '#3CB5B5' },
+            4: { color: '#97CCEE' },
+            5: { color: '#46A5E5' } }
+        };
+        var ideoptions = {
+            title: 'IDE\'s',
+            pieSliceText: 'label',
+//            tooltip: {isHtml: true},  
+            chartArea:{left:10,top:30,width:'50%',height:'75%'},
+            slices: {
+            0: { color: '#3C8DC5' },
+            1: { color: '#6FB7E9' },
+            2: { color: '#3CB5B5' },
+            3: { color: '#97CCEE' },
+            4: { color: '#46A5E5' } }
+        };
+        var versionControloptions = {
+            title: 'Version Control',
+            pieSliceText: 'label',
+//            tooltip: {isHtml: true},  
+            chartArea:{left:90,top:30,width:'50%',height:'75%'},
+            slices: {
+            0: { color: '#3C8DC5' },
+            1: { color: '#6FB7E9' },
+            2: { color: '#3CB5B5' },
+            3: { color: '#97CCEE' },
+            4: { color: '#46A5E5' } }
+        };
+        var toolsoptions = {
+            title: 'Tools',
+            pieSliceText: 'label',
+            pieStartAngle: 135,
+//            tooltip: {isHtml: true},  
+            chartArea:{left:10,top:30,width:'50%',height:'75%'},
+            slices: {
+            0: { color: '#3C8DC5' },
+            1: { color: '#6FB7E9' },
+            2: { color: '#B2D1E5' },
+            3: { color: '#3CB5B5' },
+            4: { color: '#97CCEE' },
+            5: { color: '#46A5E5' },
+            6: { color: '#46A5E5' } }
+        };
+
+        <!-- Data  -->
+        var langChart = new google.visualization.PieChart(document.getElementById('languageChart'));
+        var editorChart = new google.visualization.PieChart(document.getElementById('ideChart'));
+        var vcChart = new google.visualization.PieChart(document.getElementById('versChart'));
+        var toolChart = new google.visualization.PieChart(document.getElementById('toolsChart'));
+
+        langChart.draw(langdata, langoptions);
+        editorChart.draw(idedata, ideoptions);
+        vcChart.draw(vcdata, versionControloptions);
+        toolChart.draw(toolsdata, toolsoptions);
+        }
+    </script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["imagebarchart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+//        var data = google.visualization.arrayToDataTable([
+//            ["Language", "Years" ],
+//            ["Embedded C",      8],
+//            ["Java/J2ME",       7],
+//            ["C++",             2.5],
+//            ["Protocol Stack",  7],
+//            ["MMI/Apps",        6.5],
+//            ["Linux/Unix",      9]
+//        ]);
+        var data = google.visualization.arrayToDataTable([
+            ["Language", "Years", { role: "style" } ],
+            ["Embedded C",      8,      "#3C8DC5"],
+            ["Java/J2ME",       7,      "#6FB7E9"],
+            ["C++",             2.5,    "#B2D1E5"],
+            ["Protocol Stack",  7,      "#3CB5B5"],
+            ["MMI/Apps",        6.5,    "#97CCEE"],
+            ["Linux/Unix",      9,      "#46A5E5"]
+        ]);
+
+        var view = new google.visualization.DataView(data);
+
+        var optionsBar = {
+            width: 800,
+            height: 250,
+            bar: {groupWidth: "60%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.BarChart(document.getElementById("langExposureBar"));
+        chart.draw(view, optionsBar);
+        }
+    </script>
+</head>
+    <body>
+<!--	<body bgcolor="#E8EDFF">-->
+
+    <h1 style="text-align:right">Marc Jason Bampton - June 2016</h1>
+
+    <div class="divHeading"><table class="tb-Heading">
+      <tr>
+        <td>&nbsp;<img src="cvImages/contact_icon.png" style="width:40px;height:40px;padding:6px;"></td>
+        <td>Status &amp; Contact&nbsp;</td>
+      </tr>
+    </table>
+    </div>
+        
+        <div align="center"><table class="contactstatus">
+              <tr>
+                <td>Address:</th>
+                <td>24 Belfast Ave</th>
+                <td class="td-spacer">&nbsp;</td>
+                <td>Email:</th>
+                <td>marcbampton30@gmail.com</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Slough</td>
+                <td class="td-spacer">&nbsp;</td>
+                <td>Marital Status:</td>
+                <td>Single</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Berks, SL1 3HL</td>
+                <td class="td-spacer">&nbsp;</td>
+                <td>DOB:</td>
+                <td>31.08.1972</td>
+              </tr>
+              <tr>
+                <td>Phone:</td>
+                <td>+49 162 744 6192</td>
+                <td class="td-spacer">&nbsp;</td>
+                <td>Health:</td>
+                <td>Excellent</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>+44 746 66 33 115</td>
+                <td class="td-spacer">&nbsp;</td>
+                <td>Driving Licence:</td>
+                <td>Full/Clean</td>
+              </tr>
+            </table>
+        </div>
+
+    <div class="divHeading"><table class="tb-Heading">
+      <tr>
+        <td>&nbsp;<img src="cvImages/graduation_hat.png" style="width:40px;height:40px;padding:6px;"></td>
+        <td>Education&nbsp;</td>
+      </tr>
+    </table></div>
+        <p>MEng Electronic and Computer Engineering, University of Portsmouth, 2001.</p>
+
+    <div class="divHeading"><table class="tb-Heading">
+      <tr>
+        <td>&nbsp;<img src="cvImages/summary_icon.png" style="width:30px;height:30px;padding:6px"></td>
+        <td>Summary&nbsp;</td>
+      </tr>
+    </table></div>
+
+	   <p>I have worked freelance since 2003, providing services to a number of handset 
+           manufactures throughout Europe, primarily at layers 3, MMI/GUI and, more recently, 
+           Java and J2ME development.</p>
+
+    <div >
+        <TABLE style=margin-left:50px;max-width=800px;align="center">
+            <TR>
+                <td>
+                    <div id="languageChart" style="width: 450px; height: 200px;"></div>
+                </TD>
+                <td>
+                    <div id="ideChart" style="width: 450px; height: 200px;"></div>
+                </TD>
+            </TR>
+            <TR>
+                <td>
+                    <div id="versChart" style="width: 450px; height: 200px;"></div>
+                </TD>
+                <td>
+                    <div id="toolsChart" style="width: 450px; height: 200px"></div>
+                </TD>
+            </TR>
+        </TABLE>
+    </div>  
+    <div class="divHeading"><table class="tb-Heading">
+      <tr>
+        <td>&nbsp;<img src="cvImages/systems_icon.png" style="width:40px;height:40px;padding:6px;"></td>
+        <td>Core Systems Summary&nbsp;</td>
+      </tr>
+    </table></div>
+
+    <div id="langExposureBar" style="width: 800px;margin-left:100px; height: 300px;"></div>
+
+    <P CLASS="breakhere">
+    
+    <div class="divHeading"><table class="tb-Heading">
+      <tr>
+        <td>&nbsp;<img src="cvImages/job_icon.png" style="width:35px;height:35px;padding:6px;"></td>
+        <td>History&nbsp;</td>
+      </tr>
+    </table></div>
+    <br />
+        
+    <table class="tg" style="max-width:800px;">
+      <tr>
+        <td class="tg-iconBlackBooks"><img src="cvImages/blackbooks.png" alt="BlackBooks" style="width:60px;height:60px;"></th>
+        <td class="tg-tableDate">Apr. 2016</th>
+        <td class="tg-tableAux" style="text-align:center">Berlin<br />Germany</th>
+        <td class="tg-tableAux">- Personal project to learn Android<br/>
+            - BlackBooks is a thinking/discussion game to be played in groups.<br />
+            - <a href="http://carc.me/blackbooks/" target="_blank">BlackBooks Homepage</a> and <a href="https://play.google.com/store/apps/details?id=me.carc.blackbooks" target="_blank">Android App Download</a></th>
+      </tr>
+      <tr>
+        <td class="tg-iconNXP"><img src="cvImages/nxp.png" alt="NXP" style="width:60px;height:60px;"></th>
+        <td class="tg-tableDate">Jul. 2015</th>
+        <td class="tg-tablePrime" style="text-align:center">Gratkorn<br />Austria</th>
+        <td class="tg-tablePrime">- Develop firmware and supporting software (test, demo, lab) for a new automotive
+            communication base station<br/>
+            - Write C/C++ to develop a command line tool according to specification.<br />
+            - Maintain and enhance the JUnit test harness in accordance with the specification</th>
+      </tr>
+      <tr>
+        <td class="tg-iconAtos"><img src="cvImages/atos.jpg" alt="Atos" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Jan. 2014</td>
+        <td class="tg-tableAux" style="text-align:center">Brussels<br/>Belgium</td>
+          <td class="tg-tableAux">- Develop new and enhance existing Java functionality to the JNI.<br/>
+            - Creating example applications to demonstrate the functionality and provide &#39;how to&#39;
+              information to customers.<br/>
+            - Provide technical support to various worldwide customers.<br/>
+          </td>  
+      </tr>
+      <tr>
+        <td class="tg-iconIntel"><img src="cvImages/intel.png" alt="Intel" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Jun. 2012</td>
+        <td class="tg-tablePrime" style="text-align:center">Nuremberg<br />Germany</td>
+        <td class="tg-tablePrime">- Develop GSM RR stack from 3GPP specification on embedded C in a Unix and
+            Windows environment<br />
+            - Use log file and core dump analysis to identify issues<br />
+            - Write functionality & regression tests</td>
+      </tr>
+      <tr>
+        <td class="tg-iconNokia"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Oct. 2010</td>
+        <td class="tg-tableAux" style="text-align:center">Farnbough<br/>England</td>
+        <td class="tg-tableAux">- Use existing source code to develop a Testify framework to highlight 
+            existing bugs and emphasis future regression problems across a number of products<br />
+            - Ensure Java Test Harness compliance to JSR specifications<br />
+            - Create, maintain and document the central test server, ensuring security and functionality 
+            of test MIDlets</td>
+      </tr>
+      <tr>
+        <td class="tg-tablePrime"></td>
+        <td class="tg-tableDate">Jan. 2010</td>
+        <td class="tg-tablePrime" style="text-align:center">Various</td>
+        <td class="tg-tablePrime">- Personal time spent travelling, 22 locations in all. Built a workshop for
+            father and helped him build a house.</td>
+      </tr>
+      <tr>
+        <td class="tg-iconNokia"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Jan. 2009</td>
+        <td class="tg-tableAux" style="text-align:center">Berlin<br />Germany</td>
+        <td class="tg-tableAux">- Create test harness and test cases using CppUnit and CTC++ and document 
+            code coverage statistics.<br />
+            - Development to be modular and utilise both black and white box methods<br />
+            - Present weekly progress and coverage reports to upper management and identify potential risks</td>
+      </tr>
+      <tr>
+        <td class="tg-iconEMP"><img src="cvImages/ericsson.png" alt="EMP" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Sept 2007</td>
+        <td class="tg-tablePrime" style="text-align:center">Lund<br/>Sweden</td>
+        <td class="tg-tablePrime">- Java MIDlet development to verify platform JSR implementation.<br/>
+            - Implement and demonstrate pilot study for a new platform implementation utilising Java as the main API </td>
+      </tr>
+      <tr>
+        <td class="tg-iconTI"><img src="cvImages/ti.png" alt="Texas Instruments" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Mar. 2004</td>
+        <td class="tg-tableAux" style="text-align:center">Berlin<br />Germany</td>
+        <td class="tg-tableAux">- Development of dual stack in accordance with UMTS R5 3GPP specification<br/>
+            - Investigate and document the integration of 3 rd party MMI application suite with the TI protocol
+            stack based upon 3GPP specification</td>
+      </tr>
+      <tr>
+        <td class="tg-tablePrime"><B>Microcell</B></td>
+        <td class="tg-tableDate">Jun. 2003</td>
+        <td class="tg-tablePrime" style="text-align:center">Oulu<br/>Finland</td>
+        <td class="tg-tablePrime">- Provide animation and imaging features for a new GSM product<br/>
+            - EMS presentation, control and delivery development and defect corrections for message encoding/decoding, 
+            image, animation and melody support.<br>
+            - Implementation of viewers and decoder for image and animation formats (JPG, GIF, BMP, WBMP and BMX).</td>
+      </tr>
+      <tr>
+        <td class="tg-iconTeleca"><img src="cvImages/teleca.png" alt="Teleca" style="width:60px;height:60px;"></td>
+        <td class="tg-tableDate">Jun. 2001</td>
+        <td class="tg-tableAux" style="text-align:center">Winchester<br/>England</td>
+        <td class="tg-tableAux">- Various consulting role, often on site. Projects undertaken for Panasonic, 
+            Motorola, Rohde Schwarz and others.</td>
+      </tr>
+    </table>
+	
+        
+	<br /><br />	
+	<br /><br />	
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<head>
+
+
+    <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:12px;padding:5px 5px;border-style:none;border-width:0px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;border-top-width:1px;border-bottom-width:1px;}
+        
+        .tg .tg-7wrc{background-color:#efffff;color:#003399;vertical-align:center}
+        .tg .tg-yw4l{vertical-align:center;text-align:justify}
+
+        .tg .tg-iconNXP{vertical-align:center;background-color:#efffff}
+        .tg .tg-iconAtos{vertical-align:center}
+        .tg .tg-iconIntel{vertical-align:center;background-color:#efffff}
+        .tg .tg-iconNokia{vertical-align:center}
+        .tg .tg-iconEMP{vertical-align:center;background-color:#efffff}
+        .tg .tg-iconTI{vertical-align:center}
+        .tg .tg-iconTeleca{vertical-align:center}
+ 
+        h1 {
+            color: #2E2E2E;
+            text-align: center;
+        }
+        h2 {
+            color: #2E2E2E;
+            text-align: justify;
+        }
+
+     .contactstatus {
+		border-collapse:collapse;
+		padding:5px;
+	}
+	.contactstatus td {
+		padding:2px 15px;
+	}
+    </style>
+	
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+        var langdata = google.visualization.arrayToDataTable([
+            ['Experience', 'Years'],
+            ['Java',   		 5],
+            ['Embedded C',     8],
+            ['Qtopia',      	 1],
+            ['UML', 			 2],
+            ['C++', 			 2],
+            ['Visual Basic', 1.5]
+        ]);
+        var idedata = google.visualization.arrayToDataTable([
+            ['IDE', 'Years'],
+            ['Eclipse',   		4],
+            ['Visual Studio',     4],
+            ['Source Insight',    2],
+            ['Editors', 			4],
+            ['Visual Basic', 	    1]
+        ]);
+        var vcdata = google.visualization.arrayToDataTable([
+            ['Version Control', 'Years'],
+            ['ClearCase',   		6],
+            ['cvs / svn',		    4],
+            ['Synergy', 	 		3],
+            ['SourceSafe',      	2],
+            ['Git', 	    		1]
+        ]);
+        var toolsdata = google.visualization.arrayToDataTable([
+            ['IDE', 'Years'],
+            ['Eclipse',   		6],
+            ['Visual Studio',     4],
+            ['Source Insight',    2],
+            ['Editors', 			4],
+            ['Visual Basic', 	    1]
+        ]);
+
+        <!-- Options -->
+        var langoptions = {
+            title: 'Languages',
+            pieSliceText: 'label',
+            tooltip: {isHtml: true},  // todo - add companys where tools were used in tooltips
+            chartArea:{left:90,top:30,width:'50%',height:'75%'}
+        };
+        var ideoptions = {
+            title: 'IDE\'s',
+            pieSliceText: 'label',
+            tooltip: {isHtml: true},  // todo - add companys where tools were used in tooltips
+            chartArea:{left:10,top:30,width:'50%',height:'75%'}
+        };
+        var versionControloptions = {
+            title: 'Version Control',
+            pieSliceText: 'label',
+            tooltip: {isHtml: true},  // todo - add companys where tools were used in tooltips
+            chartArea:{left:90,top:30,width:'50%',height:'75%'}
+        };
+        var toolsoptions = {
+            title: 'Tools',
+            pieSliceText: 'label',
+            tooltip: {isHtml: true},  // todo - add companys where tools were used in tooltips
+            chartArea:{left:10,top:30,width:'50%',height:'75%'}
+        };
+
+        <!-- Data  -->
+        var langChart = new google.visualization.PieChart(document.getElementById('languageChart'));
+        var editorChart = new google.visualization.PieChart(document.getElementById('ideChart'));
+        var vcChart = new google.visualization.PieChart(document.getElementById('versChart'));
+        var toolChart = new google.visualization.PieChart(document.getElementById('toolsChart'));
+
+        langChart.draw(langdata, langoptions);
+        editorChart.draw(idedata, ideoptions);
+        vcChart.draw(vcdata, versionControloptions);
+        toolChart.draw(toolsdata, toolsoptions);
+
+        }
+
+        google.load("visualization", "1", {packages:["corechart"]});
+        google.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Language", "Years", { role: "style" } ],
+            ["Embedded C", 8, "color:green; opacity: 0.5"],
+            ["Java/J2ME", 7, "color:blue; opacity: 0.5"],
+            ["C++", 2.5, 'color:yellow; opacity: 0.5'],
+            ["Protocol Stack", 7, "color:green; opacity: 0.3"],
+            ["MMI/Apps", 6.5, "color:yellow; opacity: 0.3"],
+            ["Linux/Unix", 9, "color:blue; opacity: 0.3"]
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+               { calc: "stringify",
+                 sourceColumn: 1,
+                 type: "string",
+                 role: "annotation" },
+               2]);
+
+        var optionsBar = {
+            width: 800,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.BarChart(document.getElementById("langExposureBar"));
+        chart.draw(view, optionsBar);
+        }
+    </script>	
+	<body>
+
+    <h1>Marc Jason Bampton - December 2015</h1>
+    <br />    
+    
+    <h2>Status & Contact</h2>
+        <ul>
+            <table class="contactstatus">
+              <tr>
+                <td>Address:</th>
+                <td>24 Belfast Ave</th>
+                <td>&nbsp;</td>
+                <td>Email:</th>
+                <td>marcbampton@hotmail.com</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Slough</td>
+                <td>&nbsp;</td>
+                <td>Marital Status:</td>
+                <td>Single</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Berks, SL1 3HL</td>
+                <td>&nbsp;</td>
+                <td>DOB:</td>
+                <td>31.08.1972</td>
+              </tr>
+              <tr>
+                <td>Phone:</td>
+                <td>+49 162 744 6192</td>
+                <td>&nbsp;</td>
+                <td>Health:</td>
+                <td>Excellent</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>+44 746 66 33 115</td>
+                <td>&nbsp;</td>
+                <td>Driving Licence:</td>
+                <td>Full/Clean</td>
+              </tr>
+            </table>
+        </ul>        
+
+    <br />    
+    <h2>Education</h2>
+        <P><ul>MEng Electronic and Computer Engineering, University of Portsmouth, 2001.</ul></P>
+
+    <br />    
+
+    <h2>Summary</h2>    
+	   <P><ul>I have worked freelance since 2003, providing services to a number of handset 
+           manufactures throughout Europe, primarily at layers 3, MMI/GUI and, more recently, 
+           Java and J2ME development.</ul></P>
+			<TABLE>
+				<TR>
+					<td>
+						<div id="languageChart" style="width: 450px; height: 250px;"></div>
+					</TD>
+					<td>
+						<div id="ideChart" style="width: 450px; height: 250px;"></div>
+					</TD>
+				</TR>
+				<TR>
+					<td>
+						<div id="versChart" style="width: 450px; height: 250px;"></div>
+					</TD>
+					<td>
+						<div id="toolsChart" style="width: 450px; height: 250px"></div>
+					</TD>
+				</TR>
+			</TABLE>
+
+
+    <br />    
+    <h2>Core Systems Summary</h2>
+    <div id="langExposureBar" style="width: 900px; height: 300px;"></div>
+
+
+    <br />    
+    <br />       <br />    
+    <br />    
+    <br />    
+    <P style="page-break-before: always">
+    
+    <h2>History</h2>    
+    <table class="tg">
+      <tr>
+        <td class="tg-iconNXP"><img src="cvImages/nxp.png" alt="NXP" style="width:60px;height:60px;"></th>
+        <td class="tg-7wrc">Jul. 2015</th>
+        <td class="tg-7wrc">Gratkorn<br />Austria</th>
+        <td class="tg-7wrc">- Develop firmware and supporting software (test, demo, lab) for a new automotive
+            communication base station<br/>
+            - Write C/C++ to develop a command line tool according to specification.<br />
+            - Maintain and enhance the JUnit test harness in accordance with the specification</th>
+      </tr>
+      <tr>
+        <td class="tg-iconAtos"><img src="cvImages/atos.jpg" alt="Atos" style="width:60px;height:60px;"></td>
+        <td class="tg-yw4l">Jan. 2014</td>
+        <td class="tg-yw4l">Brussels<br/>Belgium</td>
+          <td class="tg-yw4l">- Develop new and enhance existing Java functionality to the JNI.<br/>
+            - Creating example applications to demonstrate the functionality and provide ‘how to do’
+              information to customers.<br/>
+            - Provide technical support to various worldwide customers.<br/>
+          </td>  
+      </tr>
+      <tr>
+        <td class="tg-iconIntel"><img src="cvImages/intel.png" alt="Intel" style="width:60px;height:60px;"></td>
+        <td class="tg-7wrc">Jun. 2012</td>
+        <td class="tg-7wrc">Nuremberg<br />Germany</td>
+        <td class="tg-7wrc">- Develop GSM RR stack from 3GPP specification on embedded C in a Unix and
+            Windows environment<br />
+            - Use log file and core dump analysis to identify issues<br />
+            - Write functionality & regression tests</td>
+      </tr>
+      <tr>
+        <td class="tg-iconNokia"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
+        <td class="tg-yw4l">Oct. 2010</td>
+        <td class="tg-yw4l">Farnbough<br/>England</td>
+        <td class="tg-yw4l">- Use existing source code to develop a Testify framework to highlight 
+            existing bugs and emphasis future regression problems across a number of products<br />
+            - Ensure Java Test Harness compliance to JSR specifications<br />
+            - Create, maintain and document the central test server, ensuring security and functionality 
+            of test MIDlets</td>
+      </tr>
+      <tr>
+        <td class="tg-7wrc"></td>
+        <td class="tg-7wrc">Jan. 2010</td>
+        <td class="tg-7wrc">Various</td>
+        <td class="tg-7wrc">- Personal time spent travelling, 22 locations in all. Built a workshop for
+            father and helped him build a house.</td>
+      </tr>
+      <tr>
+        <td class="tg-iconNokia"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
+        <td class="tg-yw4l">Jan. 2009</td>
+        <td class="tg-yw4l">Berlin<br />Germany</td>
+        <td class="tg-yw4l">- Create test harness and test cases using CppUnit and CTC++ and document 
+            code coverage statistics.<br />
+            - Development to be modular and utilise both black and white box methods<br />
+            - Present weekly progress and coverage reports to upper management and identify potential risks</td>
+      </tr>
+      <tr>
+        <td class="tg-iconEMP"><img src="cvImages/ericsson.png" alt="EMP" style="width:60px;height:60px;"></td>
+        <td class="tg-7wrc">Sept 2007</td>
+        <td class="tg-7wrc">Lund<br/>Sweden</td>
+        <td class="tg-7wrc">- Java MIDlet development to verify platform JSR implementation.<br/>
+            - Implement and demonstrate pilot study for a new platform implementation utilising Java as the main API </td>
+      </tr>
+      <tr>
+        <td class="tg-iconTI"><img src="cvImages/ti.png" alt="Texas Instruments" style="width:60px;height:60px;"></td>
+        <td class="tg-yw4l">Mar. 2004</td>
+        <td class="tg-yw4l">Berlin<br />Germany</td>
+        <td class="tg-yw4l">- Development of dual stack in accordance with UMTS R5 3GPP specification<br/>
+            - Investigate and document the integration of 3 rd party MMI application suite with the TI protocol
+            stack based upon 3GPP specification</td>
+      </tr>
+      <tr>
+        <td class="tg-7wrc"><B>Microcell</B></td>
+        <td class="tg-7wrc">Jun. 2003</td>
+        <td class="tg-7wrc">Oulu<br/>Finland</td>
+        <td class="tg-7wrc">- Provide animation and imaging features for a new GSM product<br/>
+            - EMS presentation, control and delivery development and defect corrections for message encoding/decoding, 
+            image, animation and melody support.<br>
+            - Implementation of viewers and decoder for image and animation formats (JPG, GIF, BMP, WBMP and BMX).</td>
+      </tr>
+      <tr>
+        <td class="tg-iconTeleca"><img src="cvImages/teleca.png" alt="Teleca" style="width:60px;height:60px;"></td>
+        <td class="tg-yw4l">Jun. 2001</td>
+        <td class="tg-yw4l">Winchester<br/>England</td>
+        <td class="tg-yw4l">- Various consulting role, often on site. Projects undertaken for Panasonic, 
+            Motorola, Rohde Schwarz and others.</td>
+      </tr>
+    </table>
+	
+        
+	<br /><br />	
+	<br /><br />	
+
+	
+	</body>
+</head>
