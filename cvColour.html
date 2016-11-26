@@ -29,16 +29,6 @@ box text colour             bt               #123456
         .tg .tg-tableDate{background-color:Lavender;color:#003399;vertical-align:center;text-align:center}
         .tg .tg-tableLocation{vertical-align:center;text-align:center}
 
-        .tg .tg-iconBlackBooks{vertical-align:center}
-        .tg .tg-iconNXP{vertical-align:center;background-color:#efffff}
-        .tg .tg-iconAtos{vertical-align:center}
-        .tg .tg-iconIntel{vertical-align:center;background-color:#efffff}
-        .tg .tg-iconNokia{vertical-align:center}
-        .tg .tg-iconEMP{vertical-align:center;background-color:#efffff}
-        .tg .tg-iconTI{vertical-align:center}
-        .tg .tg-iconTeleca{vertical-align:center}
-    
-
         .divHeading {
             border: 2px solid;
             border-radius: 25px;
@@ -127,20 +117,16 @@ box text colour             bt               #123456
 
         var langdata = google.visualization.arrayToDataTable([
             ['Experience', 'Years'],
-            ['Java',   		 5],
+            ['Java',   		 7],
             ['Embedded C',   8],
-            ['Qtopia',       1],
-            ['UML', 		 2],
-            ['C++', 		 2],
-            ['Visual Basic', 1.5]
+            ['C++', 		 3]
         ]);
         var idedata = google.visualization.arrayToDataTable([
             ['IDE', 'Years'],
-            ['Eclipse',   		4],
-            ['Visual Studio',   4],
+            ['Eclipse', 5],
+            ['V.Studio',   4],
             ['Source Insight',  2],
-            ['Editors', 		4],
-            ['Visual Basic', 	1]
+            ['Editors', 		4]
         ]);
         var vcdata = google.visualization.arrayToDataTable([
             ['Version Control', 'Years'],
@@ -156,7 +142,7 @@ box text colour             bt               #123456
             ['PCO',                 3],
             ['Other',           	3], //Testify / Purify / CTC
             ['Core Dump',        	5],
-            ['CppUnit / Junit',     2]
+            ['x unit',   			2]  //CppUnit / Junit
         ]);
 
         <!-- Options - TODO  - add companys where tools were used in tooltips -->
@@ -212,20 +198,21 @@ box text colour             bt               #123456
 //        var data = google.visualization.arrayToDataTable([
 //            ["Language", "Years" ],
 //            ["Embedded C",      8],
-//            ["Java/J2ME",       7],
+//            ["Java/J2ME",       8],
 //            ["C++",             2.5],
 //            ["Protocol Stack",  7],
-//            ["MMI/Apps",        6.5],
+//            ["MMI/Apps",        7.5],
 //            ["Linux/Unix",      9]
 //        ]);
         var data = google.visualization.arrayToDataTable([
-            ["Language", "Years", { role: "style" } ],
-            ["Embedded C",      8,      "#3366CC"],
-            ["Java/J2ME",       7,      "#DC3912"],
-            ["C++",             2.5,    "#FF9900"],
-            ["Protocol Stack",  7,      "#109618"],
-            ["MMI/Apps",        6.5,    "#990099"],
-            ["Linux/Unix",      9,      "#0099C6"]
+            ['Language', 'Years', { role: 'style' }, { role: 'annotation' } ],
+            ['Embedded C',      8,      '#3366CC', '8 years'],
+            ["Java/J2ME",       8,      "#DC3912", "8 years"],
+            ["C++",             3,    "#FF9900", "3 years"],
+            ["Protocol Stack",  7,      "#109618", "7 years"],
+            ["MMI/Apps",        7.5,    "#990099", "7.5 years"],
+            ["Linux/Unix",      10,      "#0099C6", "10 years"],
+            ["Android",      	1,      "#440099", "1 year"]
         ]);
 
         var view = new google.visualization.DataView(data);
@@ -233,7 +220,7 @@ box text colour             bt               #123456
         var optionsBar = {
             width: 800,
             height: 250,
-            bar: {groupWidth: "60%"},
+            bar: {groupWidth: "90%"},
             legend: { position: "none" },
         };
         var chart = new google.visualization.BarChart(document.getElementById("langExposureBar"));
@@ -366,15 +353,30 @@ box text colour             bt               #123456
         
     <table class="tg" style="max-width:800px;">
       <tr>
-        <td class="tg-iconBlackBooks"><img src="cvImages/blackbooks.png" alt="BlackBooks" style="width:60px;height:60px;"></th>
+        <td class="tg-tableAux"><img src="cvImages/teleca.png" alt="teleca" style="width:60px;height:60px;"></th>
+        <td class="tg-tableDate">Dec. 2016</th>
+        <td class="tg-tableAux" style="text-align:center">Stuttgart<br />Germany</th>
+        <td class="tg-tableAux">- In car entertainment system development<br/>
+            - Coding in C++.<br />
+            - More information to follow.<br />
+	  </th>
+      <tr>
+        <td class="tg-tablePrime"><img src="cvImages/btown.png" alt="B-Town" style="width:60px;height:60px;"></th>
+        <td class="tg-tableDate">Jul. 2016</th>
+        <td class="tg-tablePrime" style="text-align:center">Berlin<br />Germany</th>
+        <td class="tg-tablePrime">- Create a full feature map and tour application for Berlin on the Android platform<br/>
+            - Personally designed, developed and released.<br />
+            - <a href="https://carcmedev.github.io/btown/" target="_blank">https://carcmedev.github.io/btown</a> or download <a href="https://play.google.com/store/apps/details?id=me.carc.btown" target="_blank">B-Town</a></th>
+      </tr>      <tr>
+        <td class="tg-tableAux"><img src="cvImages/blackbooks.png" alt="BlackBooks" style="width:60px;height:60px;"></th>
         <td class="tg-tableDate">Apr. 2016</th>
         <td class="tg-tableAux" style="text-align:center">Berlin<br />Germany</th>
-        <td class="tg-tableAux">- Personal project to learn Android<br/>
-            - BlackBooks is a thinking/discussion game to be played in groups.<br />
-            - <a href="http://carc.me/blackbooks/" target="_blank">BlackBooks Homepage</a> and <a href="https://play.google.com/store/apps/details?id=me.carc.blackbooks" target="_blank">Android App Download</a></th>
+        <td class="tg-tableAux">- Create a lateral thinking application for the Android platform<br/>
+            - Personally designed, developed and released.<br />
+            - <a href="https://carcmedev.github.io/blackbooks/" target="_blank">https://carcmedev.github.io/blackbooks</a> or download <a href="https://play.google.com/store/apps/details?id=me.carc.blackbooks" target="_blank">BlackBooks</a></th>
       </tr>
       <tr>
-        <td class="tg-iconNXP"><img src="cvImages/nxp.png" alt="NXP" style="width:60px;height:60px;"></th>
+        <td class="tg-tablePrime"><img src="cvImages/nxp.png" alt="NXP" style="width:60px;height:60px;"></th>
         <td class="tg-tableDate">Jul. 2015</th>
         <td class="tg-tablePrime" style="text-align:center">Gratkorn<br />Austria</th>
         <td class="tg-tablePrime">- Develop firmware and supporting software (test, demo, lab) for a new automotive
@@ -383,7 +385,7 @@ box text colour             bt               #123456
             - Maintain and enhance the JUnit test harness in accordance with the specification</th>
       </tr>
       <tr>
-        <td class="tg-iconAtos"><img src="cvImages/atos.jpg" alt="Atos" style="width:60px;height:60px;"></td>
+        <td class="tg-tableAux"><img src="cvImages/atos.jpg" alt="Atos" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Jan. 2014</td>
         <td class="tg-tableAux" style="text-align:center">Brussels<br/>Belgium</td>
           <td class="tg-tableAux">- Develop new and enhance existing Java functionality to the JNI.<br/>
@@ -393,7 +395,7 @@ box text colour             bt               #123456
           </td>  
       </tr>
       <tr>
-        <td class="tg-iconIntel"><img src="cvImages/intel.png" alt="Intel" style="width:60px;height:60px;"></td>
+        <td class="tg-tablePrime"><img src="cvImages/intel.png" alt="Intel" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Jun. 2012</td>
         <td class="tg-tablePrime" style="text-align:center">Nuremberg<br />Germany</td>
         <td class="tg-tablePrime">- Develop GSM RR stack from 3GPP specification on embedded C in a Unix and
@@ -402,7 +404,7 @@ box text colour             bt               #123456
             - Write functionality & regression tests</td>
       </tr>
       <tr>
-        <td class="tg-iconNokia"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
+        <td class="tg-tableAux"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Oct. 2010</td>
         <td class="tg-tableAux" style="text-align:center">Farnbough<br/>England</td>
         <td class="tg-tableAux">- Use existing source code to develop a Testify framework to highlight 
@@ -419,7 +421,7 @@ box text colour             bt               #123456
             father and helped him build a house.</td>
       </tr>
       <tr>
-        <td class="tg-iconNokia"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
+        <td class="tg-tableAux"><img src="cvImages/nokia.png" alt="Nokia" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Jan. 2009</td>
         <td class="tg-tableAux" style="text-align:center">Berlin<br />Germany</td>
         <td class="tg-tableAux">- Create test harness and test cases using CppUnit and CTC++ and document 
@@ -428,14 +430,14 @@ box text colour             bt               #123456
             - Present weekly progress and coverage reports to upper management and identify potential risks</td>
       </tr>
       <tr>
-        <td class="tg-iconEMP"><img src="cvImages/ericsson.png" alt="EMP" style="width:60px;height:60px;"></td>
+        <td class="tg-tablePrime"><img src="cvImages/ericsson.png" alt="EMP" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Sept 2007</td>
         <td class="tg-tablePrime" style="text-align:center">Lund<br/>Sweden</td>
         <td class="tg-tablePrime">- Java MIDlet development to verify platform JSR implementation.<br/>
             - Implement and demonstrate pilot study for a new platform implementation utilising Java as the main API </td>
       </tr>
       <tr>
-        <td class="tg-iconTI"><img src="cvImages/ti.png" alt="Texas Instruments" style="width:60px;height:60px;"></td>
+        <td class="tg-tableAux"><img src="cvImages/ti.png" alt="Texas Instruments" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Mar. 2004</td>
         <td class="tg-tableAux" style="text-align:center">Berlin<br />Germany</td>
         <td class="tg-tableAux">- Development of dual stack in accordance with UMTS R5 3GPP specification<br/>
@@ -452,7 +454,7 @@ box text colour             bt               #123456
             - Implementation of viewers and decoder for image and animation formats (JPG, GIF, BMP, WBMP and BMX).</td>
       </tr>
       <tr>
-        <td class="tg-iconTeleca"><img src="cvImages/teleca.png" alt="Teleca" style="width:60px;height:60px;"></td>
+        <td class="tg-tableAux"><img src="cvImages/teleca.png" alt="Teleca" style="width:60px;height:60px;"></td>
         <td class="tg-tableDate">Jun. 2001</td>
         <td class="tg-tableAux" style="text-align:center">Winchester<br/>England</td>
         <td class="tg-tableAux">- Various consulting role, often on site. Projects undertaken for Panasonic, 
