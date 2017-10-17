@@ -1,4 +1,8 @@
-# bampton.github.io
-Online store for CV's
+# Online store for CV's
+bampton.github.io
 
-Pick a colour and save to PDF if you want a hard copy. MS Word version to follow
+o- Save aa PDF or download the one available
+
+o- Microsoft compatible version available
+
+o- Blue and Color version are not maintained
