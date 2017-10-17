@@ -3,8 +3,10 @@
 
 ## Hard copies
 
-o- Save aa PDF or download the one available
+- Save aa PDF or download the one available
 
-o- Microsoft compatible version available
+- Microsoft compatible version available
 
-o- Blue and Color version are not maintained
+
+
+- Blue and Color version are not maintained
