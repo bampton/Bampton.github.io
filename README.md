@@ -1,5 +1,5 @@
 # Online store for CV's
-[Link to the CV Online](bampton.github.io/).
+[Link to the CV Online](https://bampton.github.io/).
 
 ## Hard copies
 
