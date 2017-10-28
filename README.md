@@ -3,7 +3,7 @@
 
 ## Hard copies
 
-- Save aa PDF or download the one available
+- Save as PDF or download the one provided
 
 - Microsoft compatible version available
 
